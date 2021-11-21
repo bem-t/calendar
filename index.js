@@ -24,8 +24,8 @@ require("http").createServer(async function (req, res) {
         data = await fs.promises.readFile("bootstrap-responsive.css");
         res.end(data);
         return;
-    case "/jquery-1.9.1.js":
-        data = await fs.promises.readFile("jquery-1.9.1.js");
+    case "/jquery.min.js":
+        data = await fs.promises.readFile("jquery.min.js");
         res.end(data);
         return;
     case "/calendar.js":
