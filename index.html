@@ -1,0 +1,31 @@
+<html>
+
+    <head>  
+        <link rel="stylesheet" href="https://bootstrap-calendar.eivissapp.com/components/bootstrap2/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap-responsive.css">
+        <link rel="stylesheet" href="calendar.css">
+     </head>
+
+<body>
+    start date
+    <input type="date">
+    <br>
+    end date
+    <input type="date">
+
+
+	<div id="calendar"></div>
+
+	<script type="text/javascript" src="jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="underscore-min.js"></script>
+	<script type="text/javascript" src="calendar.js"></script>
+	<script type="text/javascript">
+		var calendar = $("#calendar").calendar(
+			{
+				tmpl_path: "/tmpls/",
+				events_source: function () { return []; }
+			});			
+	</script>
+
+</body>
+</html>
