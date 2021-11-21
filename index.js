@@ -23,6 +23,8 @@ require("http").createServer(async function (req, res) {
         res.end(data);
         return;
     }
+    res.statusCode = 404;
+    res.end();
 }).listen(8080, function () {
     console.log("server started on port 8080")
 });

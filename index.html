@@ -7,16 +7,17 @@
      </head>
 
 <body>
-    start date
+    <!-- start date
     <input type="date">
     <br>
     end date
-    <input type="date">
+    <input type="date"> -->
 
 
 	<div id="calendar"></div>
 
 	<script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
 	<script type="text/javascript" src="underscore-min.js"></script>
 	<script type="text/javascript" src="bower_components/bootstrap-calendar/js/calendar.js"></script>
 	<script type="text/javascript">
@@ -26,6 +27,22 @@
 				events_source: function () { return []; }
 			});			
 	</script>
+
+<script>
+(function (){
+    document.querySelector(
+        '.cal-month-box'
+    ).addEventListener("click", async function(item) {
+        console.log(item);
+        let element = item.target.closest('.cal-cell');
+        element.style.background ="violet";
+        let date = element.querySelector(".pull-right").dataset.calDate;
+        console.log(date);
+        await fetch("/api/save-date?date=" + date);
+
+    })
+}());
+</script>
 
 </body>
 </html>
